@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'main',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',               
+    'rest_auth',       
 ]
 
 AUTH_USER_MODEL = 'main.User'
@@ -138,6 +138,7 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 REST_USE_JWT = True

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import filters
 # from rest_framework.permissions import AllowAny
 
 
@@ -19,6 +20,8 @@ class CycleViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['email']
 
 # def get_permissions(self):
 #         permission_classes = []
