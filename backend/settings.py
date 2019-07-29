@@ -40,10 +40,18 @@ INSTALLED_APPS = [
     'main',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',       
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
+SITE_ID = 1
+
 AUTH_USER_MODEL = 'main.User'
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

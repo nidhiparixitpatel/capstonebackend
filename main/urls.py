@@ -33,6 +33,9 @@ userposts_router.register(r'posts', PostViewSet, base_name='userpost')
 urlpatterns = [
     path('', include(router.urls)),
     path('auth/', include('rest_auth.urls')),
+    path('auth/registration', include('rest_auth.registration.urls')),
+    #  url(r'^rest-auth/', include('rest_auth.urls')),
+    # url(r'^rest-auth/registration/', include('rest_auth.registration.urls'))
     path('', include(users_router.urls)),
     path('', include(usercycleinfo_router.urls)),
     path('', include(userposts_router.urls)),
